@@ -45,7 +45,7 @@ void Client::on_message(const struct mosquitto_message * msg) {
 void Client::RequestAndPublishMessageFromUser() {
     std::cout << "Please, write message to server: " << std::endl;
     std::string message;
-    std::cin >> message;
+    std::getline(std::cin, message);
 
     // Sending message to server
     int result = publish(nullptr, inputTopic.c_str(),

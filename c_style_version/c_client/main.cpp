@@ -70,7 +70,7 @@ int main(int argc, char *argv[]) {
     }
 
     // Subscribing to server responce
-    result =  mosquitto_subscribe(mosq, nullptr, outputTopic.c_str(), 0);
+    result = mosquitto_subscribe(mosq, nullptr, outputTopic.c_str(), 0);
     if(result != MOSQ_ERR_SUCCESS) {
         std::cout   << "Publishing fails with error: "
                     << mosquitto_strerror(result) << std::endl;
@@ -82,7 +82,7 @@ int main(int argc, char *argv[]) {
         std::cout << "Please, write message to server: " << std::endl;
 
         std::string message;
-        std::cin >> message;
+        std::getline(std::cin, message);
 
         // Sending message to server
         result = mosquitto_publish( mosq, nullptr, inputTopic.c_str(),

@@ -8,5 +8,8 @@ To setup broker on Linux system for this project you can obtain and install mosq
 `mosquitto` command.
 This starts localhost broker in your system. After that you can run project.
 
+On Debian-based distributions probably you need to install additional libraries:
+`sudo apt install xsltproc docbook-xsl`
+
 Was tested on Centos 9 stream.
 For more infomation about mosquitto you can check [this](https://mosquitto.org/documentation/) documentation page.
